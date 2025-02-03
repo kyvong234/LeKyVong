@@ -1,0 +1,8 @@
+Computational inefficiencies and anti-patterns list:
+
+1. line 11: The Props interface is defined to inherit from BoxProps but does not have any properties, so instead of defining Props and initializing variables from Props, we can initialize variables from BoxProps
+2. line 20 & 37 & 38: the WalletBalance interface type balance param has a blockchain attribute, which shows that when WalletBalance is defined, it needs to define an additional blockchain attribute. Line 20 shows that the blockchain attribute needs to be of string type.
+3. line 39: misnamed variable
+4. line 39: Instead of writing an if clause nested in an if clause and then returning true like that, we can simplify it by returning the condition of the 2 if clauses mentioned.
+5. line 48: Instead of using a nested if clause with two opposite comparison conditions like that, we can use the statement return to a single comparison condition.
+6. line 56 & 63: The sortedBalances array is mapped in both places, but the item is declared in two interfaces WalletBalance and FormattedWalletBalance, we can just define the WalletBalance interface and use it in both places.
